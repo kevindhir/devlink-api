@@ -1,5 +1,7 @@
 {
-  "body": "{\"body\":\"hello world\",\"title\":\"testpost\",\"category\":\"KEVINTEST\"}",
+  "pathParameters": {
+    "category": "KEVINTEST"
+  },
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"

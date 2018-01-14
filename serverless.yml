@@ -56,6 +56,15 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  getcategory:
+    handler: getcategory.main
+    events:
+      - http:
+          path: posts/{category}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
   getcomments:
     handler: getcomments.main
     events:
