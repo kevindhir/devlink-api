@@ -83,6 +83,12 @@ var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
+/**
+ * Created by kevindhir on 2018-01-14.
+ */
+/**
+ * Created by kevindhir on 2018-01-13.
+ */
 var main = exports.main = function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(event, context, callback) {
         var params, result;
@@ -91,17 +97,20 @@ var main = exports.main = function () {
                 switch (_context.prev = _context.next) {
                     case 0:
                         params = {
-                            TableName: "posts"
+                            TableName: "comments",
+                            Key: {
+                                commentId: event.pathParameters.comment,
+                                postId: event.pathParameters.post
+                            }
                         };
                         _context.prev = 1;
                         _context.next = 4;
-                        return dynamoDbLib.call("scan", params);
+                        return dynamoDbLib.call("delete", params);
 
                     case 4:
                         result = _context.sent;
 
-                        // Return the matching list of items in response body
-                        callback(null, (0, _responseLib.success)(result.Items));
+                        callback(null, (0, _responseLib.success)({ status: true }));
                         _context.next = 11;
                         break;
 

@@ -64,3 +64,21 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+
+  deletepost:
+    handler: deletepost.main
+    events:
+      - http:
+          path: posts/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
+
+  deletecomment:
+    handler: deletecomment.main
+    events:
+      - http:
+          path: comments/{comment}{post}
+          method: delete
+          cors: true
+          authorizer: aws_iam

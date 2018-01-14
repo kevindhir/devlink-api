@@ -1,4 +1,7 @@
 /**
+ * Created by kevindhir on 2018-01-14.
+ */
+/**
  * Created by kevindhir on 2018-01-13.
  */
 import * as dynamoDbLib from "./libs/dynamodb-lib";
@@ -6,9 +9,10 @@ import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context, callback) {
     const params = {
-        TableName: "posts",
+        TableName: "comments",
         Key: {
-            postId: event.pathParameters.id
+            commentId: event.pathParameters.comment,
+            postId: event.pathParameters.post
         }
     };
 
