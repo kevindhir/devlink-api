@@ -1,6 +1,6 @@
 {
   "pathParameters": {
-    "category": "KEVINTEST"
+    "tag": "KEVINTEST"
   },
   "requestContext": {
     "identity": {

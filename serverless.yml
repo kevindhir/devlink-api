@@ -1,4 +1,4 @@
-service: notes-app-api
+service: devlink-api
 
 # Use serverless-webpack plugin to transpile ES6/ES7
 plugins:
@@ -47,12 +47,12 @@ functions:
           cors: true
           authorizer: aws_iam
 
-  createcomment:
-    handler: createcomment.main
+  deletepost:
+    handler: deletepost.main
     events:
       - http:
-          path: comments
-          method: post
+          path: posts/{id}
+          method: delete
           cors: true
           authorizer: aws_iam
 
@@ -60,10 +60,19 @@ functions:
     handler: getcategory.main
     events:
       - http:
-          path: posts/{category}
+          path: posts/category/{tag}
           method: get
           cors: true
           authorizer: aws_iam
+
+  createcomment:
+      handler: createcomment.main
+      events:
+        - http:
+            path: comments
+            method: post
+            cors: true
+            authorizer: aws_iam
 
   getcomments:
     handler: getcomments.main
@@ -74,20 +83,11 @@ functions:
           cors: true
           authorizer: aws_iam
 
-  deletepost:
-    handler: deletepost.main
-    events:
-      - http:
-          path: posts/{id}
-          method: delete
-          cors: true
-          authorizer: aws_iam
-
   deletecomment:
     handler: deletecomment.main
     events:
       - http:
-          path: comments/{comment}
+          path: comments/delete/{comment}
           method: delete
           cors: true
           authorizer: aws_iam

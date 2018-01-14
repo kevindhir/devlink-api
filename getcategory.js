@@ -10,7 +10,7 @@ export async function main(event, context, callback) {
         TableName: "posts",
         FilterExpression: "contains(#category, :v)",
         ExpressionAttributeNames: { "#category": "category" },
-        ExpressionAttributeValues: { ":v": event.pathParameters.category }
+        ExpressionAttributeValues: { ":v": event.pathParameters.tag }
     };
 
     try {
