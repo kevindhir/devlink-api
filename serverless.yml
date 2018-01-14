@@ -38,6 +38,15 @@ functions:
             cors: true
             authorizer: aws_iam
 
+  getpost:
+    handler: getpost.main
+    events:
+      - http:
+          path: posts/single/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
   createpost:
     handler: createpost.main
     events:
