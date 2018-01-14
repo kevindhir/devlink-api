@@ -87,7 +87,7 @@ functions:
     handler: deletecomment.main
     events:
       - http:
-          path: comments/{comment}{post}
+          path: comments/{comment}
           method: delete
           cors: true
           authorizer: aws_iam

@@ -86,44 +86,47 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 /**
  * Created by kevindhir on 2018-01-14.
  */
-
+/**
+ * Created by kevindhir on 2018-01-13.
+ */
 var main = exports.main = function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(event, context, callback) {
-        var params, result;
+        var data, params, result;
         return _regenerator2.default.wrap(function _callee$(_context) {
             while (1) {
                 switch (_context.prev = _context.next) {
                     case 0:
+                        data = JSON.parse(event.body);
                         params = {
-                            TableName: "posts",
-                            FilterExpression: "contains(#category, :v)",
-                            ExpressionAttributeNames: { "#category": "category" },
-                            ExpressionAttributeValues: { ":v": event.pathParameters.category }
+                            TableName: "comments",
+                            Key: {
+                                commentId: event.pathParameters.comment,
+                                postId: data.postId
+                            }
                         };
-                        _context.prev = 1;
-                        _context.next = 4;
-                        return dynamoDbLib.call("scan", params);
+                        _context.prev = 2;
+                        _context.next = 5;
+                        return dynamoDbLib.call("delete", params);
 
-                    case 4:
+                    case 5:
                         result = _context.sent;
 
-                        // Return the matching list of items in response body
-                        callback(null, (0, _responseLib.success)(result.Items));
-                        _context.next = 11;
+                        callback(null, (0, _responseLib.success)({ status: true }));
+                        _context.next = 12;
                         break;
 
-                    case 8:
-                        _context.prev = 8;
-                        _context.t0 = _context["catch"](1);
+                    case 9:
+                        _context.prev = 9;
+                        _context.t0 = _context["catch"](2);
 
                         callback(null, (0, _responseLib.failure)({ status: false }));
 
-                    case 11:
+                    case 12:
                     case "end":
                         return _context.stop();
                 }
             }
-        }, _callee, this, [[1, 8]]);
+        }, _callee, this, [[2, 9]]);
     }));
 
     return function main(_x, _x2, _x3) {

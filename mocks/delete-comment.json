@@ -1,7 +1,7 @@
 {
+  "body": "{\"postId\":\"ABC123\"}",
   "pathParameters": {
-    "comment": "92ed0e00-f8f3-11e7-8a1a-438a69ee2144",
-    "post": "ABC123"
+    "comment": "4eb279e0-f90d-11e7-862c-af3a787fe5ff"
   },
   "requestContext": {
     "identity": {
