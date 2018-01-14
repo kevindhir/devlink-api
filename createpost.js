@@ -14,8 +14,9 @@ export function main(event, context, callback) {
     const params = {
         TableName: "posts",
         Item: {
-            userId: event.requestContext.identity.cognitoIdentityId,
             postId: uuid.v1(),
+            userId: event.requestContext.identity.cognitoIdentityId,
+            category: data.category,
             body: data.body,
             title: data.title,
             createdAt: new Date().getTime()

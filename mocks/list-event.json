@@ -1,5 +1,4 @@
 {
-  "body": "{\"body\":\"hello world\",\"title\":\"testpost\",\"category\":\"projects\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"
