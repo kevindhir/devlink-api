@@ -29,8 +29,8 @@ provider:
       Resource: "arn:aws:dynamodb:us-east-2:*:*"
 
 functions:
-  list:
-      handler: list.main
+  scan:
+      handler: scan-posts.main
       events:
         - http:
             path: posts
@@ -56,3 +56,11 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  getcomments:
+    handler: getcomments.main
+    events:
+      - http:
+          path: comments/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam

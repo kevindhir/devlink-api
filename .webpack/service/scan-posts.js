@@ -83,9 +83,6 @@ var _asyncToGenerator2 = __webpack_require__(2);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-/**
- * Created by kevindhir on 2018-01-13.
- */
 var main = exports.main = function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(event, context, callback) {
         var params, result;
@@ -98,7 +95,7 @@ var main = exports.main = function () {
                         };
                         _context.prev = 1;
                         _context.next = 4;
-                        return dynamoDbLib.call("query", params);
+                        return dynamoDbLib.call("scan", params);
 
                     case 4:
                         result = _context.sent;
