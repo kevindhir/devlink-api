@@ -5,7 +5,4 @@ jspm_packages
 # Serverless directories
 .serverless
 
-.idea/inspectionProfiles/
-.idea/modules.xml
-.idea/nwhacks2018.iml
-.idea/workspace.xml
+.idea/**
